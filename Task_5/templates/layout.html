@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title_block %}
+
+        {% endblock %}
+    </title>
+    <style>
+        /* Body Styles */
+        body {
+            background-image: url('https://png.pngtree.com/background/20210714/original/pngtree-futuristic-shape-abstract-background-chemistry-technology-concept-for-website-picture-image_1250295.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(216, 230, 252);
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+    
+        nav a {
+            text-decoration: none;
+            color: rgb(0, 60, 255);
+            margin-right: 20px;
+        }
+    
+        nav a:last-child {
+            margin-right: 0;
+        }
+    
+        /* Wrapper Styles */
+        .wrapper {
+            max-width: 80%;
+            margin: 50px auto;
+            padding: 30px;
+            border: 8px solid rgb(0, 0, 0);
+            background-color: rgb(212, 232, 247);
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+    
+        .wrapper h1 {
+            margin-top: 0;
+            font-size: 36px;
+            text-align: center;
+            text-decoration: underline;
+        }
+    
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            text-align: center;
+        }
+    
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid black;
+            font-size: 18px;
+        }
+    
+        th {
+            background-color: rgb(216, 230, 252);
+            font-weight: bold;
+        }
+    
+        td:first-child {
+            width: 60%;
+            text-align: left;
+        }
+    
+        td:last-child {
+            width: 40%;
+        }
+    
+        a {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div style="border: 8px solid rgb(0, 0, 0);">
+    <nav style="border: antiquewhite; size: 0vmax;">
+        <a style="color:rgb(0, 60, 255);margin-right:20px; font-size: x-large;" href="{{url_for('home')}}">Home</a>
+        <a style="color:rgb(0, 42, 255);margin-right:20px; font-size: x-large;" href="{{url_for('history')}}">History</a>    
+    </nav>
+    </div>
+    {% block body_block %}
+
+    {% endblock %}
+</body>
+</html>
