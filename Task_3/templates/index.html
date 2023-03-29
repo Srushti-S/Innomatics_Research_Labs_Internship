@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clone for Regex101.com</title>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <style>
+        body {
+            background-color: #d6d8d8;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+        }
+        
+        table {
+            border: 2px solid #1a1a1a;
+            width: 700px;
+            margin: 0 auto;
+            background-color: #dcc0df;
+        }
+        
+        h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+        
+        input[type="text"] {
+            font-size: 16px;
+            height: 30px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+            border-radius: 5px;
+            border: 2px solid #414141;
+        }
+        
+        input[type="submit"] {
+            height: 50px;
+            width: 100px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            background-color: #75dce4;
+            color: #000000;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #56b8c0;
+        }
+        
+        .result {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 2px solid #c0c0c0;
+            background-color: #fff;
+        }
+        
+        .result p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        .match {
+            color: rgb(9, 191, 237);
+            font-weight: bold;
+        }
+  
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Clone for Regex101.com</h1>
+    </header>
+    <main>
+      <form action="" method="post">
+        <fieldset>
+          <legend>Regular Expression</legend>
+          <input type="text" name="xpn" value="{{xpn}}" placeholder="Enter the regular expression">
+        </fieldset>
+        <fieldset>
+          <legend>Test String</legend>
+          <input type="text" name="tst" value="{{tst}}" placeholder="Enter the test string">
+        </fieldset>
+        {% if count > 0 %}
+        <h3>Result:</h3>
+        <p>{{result}}</p>
+        <h3>Number of matched string(s):</h3>
+        <p>{{count}}</p>
+        <h3>Position of matched string(s):</h3>
+        <ul>
+          {% for lst in lsts %}
+          <li>{{lst}}</li>
+          {% endfor %}
+        </ul>
+        {% elif count==-1 %}
+        <p>{{result}}</p>
+        {% else %}
+        <h3>Result:</h3>
+        <p>No Matches found</p>
+        <h3>Number of matched string(s):</h3>
+        <p>{{count}}</p>
+        {% endif %}
+        <input type="submit" value="Check">
+      </form>
+    </main>
+  </body>
+</html>
